@@ -1,0 +1,52 @@
+[
+  {
+    "cardId": 0,
+    "cardImg": "img/fool.png",
+    "altTxt": "fool"
+  },
+  {
+    "cardId": 1,
+    "cardImg": "img/magician.png",
+    "altTxt": "magician"
+  },
+  {
+    "cardId": 2,
+    "cardImg": "img/chariot.png",
+    "altTxt": "chariot"
+  },
+  {
+    "cardId": 3,
+    "cardImg": "img/lovers.png",
+    "altTxt": "lovers"
+  },
+  {
+    "cardId": 4,
+    "cardImg": "img/emperor.png",
+    "altTxt": "emperor"
+  },
+  {
+    "cardId": 5,
+    "cardImg": "img/priestess.png",
+    "altTxt": "priestess"
+  },
+  {
+    "cardId": 6,
+    "cardImg": "img/hermit.png",
+    "altTxt": "hermit"
+  },
+  {
+    "cardId": 7,
+    "cardImg": "img/empress.png",
+    "altTxt": "empress"
+  },
+  {
+    "cardId": 8,
+    "cardImg": "img/hierophant.png",
+    "altTxt": "hierophant"
+  },
+  {
+    "cardId": 9,
+    "cardImg": "img/world.png",
+    "altTxt": "world"
+  }
+]
