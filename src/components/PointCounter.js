@@ -11,6 +11,7 @@ class PointCounter extends React.Component {
     };
   }
 
+  // Increments our points and ups the top points if its greater than
   incrementPoints = () => {
     let newPoints = this.state.points + 1;
     this.setState({
@@ -19,6 +20,7 @@ class PointCounter extends React.Component {
     });
   }
 
+  // Resets the point counter
   resetPoints = () => {
     this.setState({points: 0});
   }

@@ -13,6 +13,7 @@ class Card extends React.Component {
     };
   }
 
+  // Tell the game to update
   handleClick = () => {
     this.props.gameUpdate(this.state.id);
   }

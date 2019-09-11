@@ -17,9 +17,12 @@ class Game extends React.Component {
     }
   }
 
-
+  // Update the game whenever a card is clicked
   update = (cardId) => {
+    // Hide our jumbotron.
     this.setState({started: true});
+    
+    // Has the card already been clicked?
     if(this.selectedCardIds.indexOf(cardId) === -1){
       this.counter.incrementPoints();
       this.selectedCardIds.push(cardId);
@@ -31,7 +34,9 @@ class Game extends React.Component {
     this.shuffleCards();
   }
 
+  // Shuffles our cards using Durstenfeld shuffle.
   shuffleCards = () => {
+    // Don't mess with the state, copy the array
     let cardsArray = [...this.state.cards];
 
     for (let i = cardsArray.length - 1; i > 0; i--) {
