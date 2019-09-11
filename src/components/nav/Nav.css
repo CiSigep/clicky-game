@@ -1,0 +1,12 @@
+.bg-red {
+  background-color: #FF1001;
+}
+
+.nav-img {
+  max-height: 40px;
+}
+
+.nav-text {
+  font-size: 18pt;
+  font-weight: 300;
+}

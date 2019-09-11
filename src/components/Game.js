@@ -1,36 +1,38 @@
 import React from "react";
+import Nav from "./nav/Nav";
 import PointCounter from "./PointCounter";
-import Card from "./Card";
+import Card from "./card/Card";
 import cards from "../cards.json";
+import Jumbotron from "./Jumbotron";
 
 class Game extends React.Component {
   constructor(props){
     super(props);
 
-    this.cardId = -1;
+    this.selectedCardIds = [];
 
     this.state = {
-      cards: cards
+      cards: cards,
+      started: false
     }
   }
 
 
   update = (cardId) => {
-    if(this.cardId === -1){
+    this.setState({started: true});
+    if(this.selectedCardIds.indexOf(cardId) === -1){
       this.counter.incrementPoints();
-      this.cardId = cardId;
+      this.selectedCardIds.push(cardId);
     }
-    else if(this.cardId === cardId)
-      this.counter.incrementPoints();
-    else if(this.cardId !== cardId){
-      this.cardId = -1;
+    else {
+      this.selectedCardIds = [];
       this.counter.resetPoints();
     }
     this.shuffleCards();
   }
 
   shuffleCards = () => {
-    let cardsArray = this.state.cards.slice(0);
+    let cardsArray = [...this.state.cards];
 
     for (let i = cardsArray.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -42,14 +44,21 @@ class Game extends React.Component {
 
   render() {
     return(
-    <div>
-      <PointCounter ref={(counter) => {this.counter = counter}}/>
-      {
-        this.state.cards.map(ele => {
-          return (<Card key={ele.cardId} cardId={ele.cardId} cardImg={ele.cardImg} altTxt={ele.altTxt} gameUpdate={this.update}/>);
-        })
-      }
-    </div>
+      <div>
+        <Nav>
+          <PointCounter ref={(counter) => { this.counter = counter }} />
+        </Nav>
+        {!this.state.started && <Jumbotron />}
+        <div className="container-fluid mx-0 px-0 mt-2">
+          <div className="row m-auto">
+            {
+              this.state.cards.map(ele => {
+                return (<Card key={ele.cardId} cardId={ele.cardId} cardImg={ele.cardImg} altTxt={ele.altTxt} gameUpdate={this.update} />);
+              })
+            }
+          </div>
+        </div>
+      </div>
     );
   }
 }

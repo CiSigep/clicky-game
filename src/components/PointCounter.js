@@ -6,12 +6,17 @@ class PointCounter extends React.Component {
 
 
     this.state = {
-      points: 0
+      points: 0,
+      topPoints: 0
     };
   }
 
   incrementPoints = () => {
-    this.setState({points: this.state.points + 1});
+    let newPoints = this.state.points + 1;
+    this.setState({
+      points: newPoints,
+      topPoints: newPoints > this.state.topPoints ? newPoints : this.state.topPoints
+    });
   }
 
   resetPoints = () => {
@@ -20,8 +25,8 @@ class PointCounter extends React.Component {
 
   render() {
     return(
-      <div>
-        Points: {this.state.points}
+      <div className="ml-auto nav-text stylized-text">
+        Top: {this.state.topPoints} | Points: {this.state.points}
       </div>
     );
   }

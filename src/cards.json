@@ -46,6 +46,16 @@
   },
   {
     "cardId": 9,
+    "cardImg": "img/sun.png",
+    "altTxt": "sun"
+  },
+  {
+    "cardId": 10,
+    "cardImg": "img/moon.png",
+    "altTxt": "moon"
+  },
+  {
+    "cardId": 11,
     "cardImg": "img/world.png",
     "altTxt": "world"
   }
